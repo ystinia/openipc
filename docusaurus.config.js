@@ -1,153 +1,135 @@
-/**
- * Copyright (c) 2025 OpenIPC community
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 // @ts-check
+// Note: type annotations allow type checking and IDEs autocompletion
 
-// See Netlify env variables here: https://docs.netlify.com/configure-builds/environment-variables/#build-metadata
-const isNetlify = process.env.NETLIFY === 'true';
-const isNetlifyDeployPreview =
-  isNetlify && process.env.CONTEXT === 'deploy-preview';
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
-// Deploy preview: we want to test the Infima RTL support!
-/** @type {import("@docusaurus/types").I18nConfig} */
-const i18n = isNetlifyDeployPreview
-  ? {
-      defaultLocale: 'LTR',
-      locales: ['LTR', 'RTL'],
-      localeConfigs: {
-        LTR: {
-          direction: 'ltr',
-        },
-        RTL: {
-          direction: 'rtl',
-        },
-      },
-    }
-  : undefined;
+const organizationName = "ystinia";
+const projectName = "openipc";
 
-/** @type {import("@docusaurus/types").Config} */
+/** @type {import('@docusaurus/types').Config} */
 const config = {
-  i18n,
-  title: 'OpenIPC',
-  tagline: 'OpenIPC is an open source operating system from the open community targeting for IP cameras with ARM and MIPS processors. 🔥',
-  organizationName: 'OpenIPC community',
-  projectName: 'openipc',
-  baseUrl: '/',
-  url: 'https://openipc.link',
-  favicon: 'img/logo.svg',
-  /** @type {import("@docusaurus/preset-classic").ThemeConfig} */
-  themeConfig: {
-    colorMode: {
-      respectPrefersColorScheme: true,
-    },
-    navbar: {
-      title: 'OpenIPC',
-      logo: {
-        alt: 'OpenIPC Logo',
-        src: 'img/logo.svg',
-      },
-      items: [
-        {
-          to: 'docs/getting-started/introduction',
-          label: 'Docs',
-          /** @type {"left" | "right"} */
-          position: 'left',
-        },
-        isNetlifyDeployPreview && {
-          to: 'pathname:///demo',
-          label: 'Demo',
-          /** @type {"left" | "right"} */
-          position: 'left',
-        },
-        isNetlifyDeployPreview && {
-          type: 'localeDropdown',
-          /** @type {"left" | "right"} */
-          position: 'left',
-        },
-      ].filter(Boolean),
-    },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Introduction',
-              to: 'docs/getting-started/introduction',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/openipc',
-            },
-          ],
-        },
-        {
-          title: 'Social',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/openipc/',
-            },
-          ],
-        },
-        {
-          title: 'Legal',
-          // Please do not remove the privacy and terms, it's a legal requirement.
-          items: [
-            {
-              label: 'Privacy',
-              href: 'https://openipc.org/legal/privacy/',
-              target: '_blank',
-              rel: 'noreferrer noopener',
-            },
-            {
-              label: 'Terms',
-              href: 'https://openipc.org/legal/terms/',
-              target: '_blank',
-              rel: 'noreferrer noopener',
-            },
-          ],
-        },
-      ],
-      logo: {
-        alt: 'Meta Open Source Logo',
-        // This default includes a positive & negative version, allowing for
-        // appropriate use depending on your site's style.
-        src: '/img/meta_opensource_logo_negative.svg',
-        href: 'https://openipc.org',
-      },
-      copyright: `Copyright © ${new Date().getFullYear()} Meta Platforms, Inc.`,
-    },
-    docs: {
-      sidebar: {
-        autoCollapseCategories: true,
-      },
-    },
+  title: "OpenIPC",
+  tagline: "OpenIPC is an open source operating system from the open community targeting for IP cameras with ARM and MIPS processors.",
+  url: `https://${organizationName}.github.io`,
+  baseUrl: `/${projectName}/`,
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
+  favicon: "img/favicon.ico",
+  // GitHub Pages adds a trailing slash by default that I don't want
+  trailingSlash: false,
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName, // Usually your GitHub org/user name.
+  projectName, // Usually your repo name.
+
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
   },
+
   presets: [
     [
-      '@docusaurus/preset-classic',
-      /** @type {import("@docusaurus/preset-classic").Options} */
+      "classic",
+      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: 'docs',
-          sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [require('./src/remark/playground')],
+          sidebarPath: require.resolve("./sidebars.js"),
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
+        },
+        theme: {
+          customCss: require.resolve("./src/css/custom.css"),
+        },
       }),
     ],
   ],
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      navbar: {
+        title: "OpenIPC",
+        logo: {
+          alt: "OpenIPC Logo",
+          src: "img/logo.svg",
+        },
+        items: [
+          {
+            type: "doc",
+            docId: "introduction",
+            position: "left",
+            label: "Documentation",
+          },
+          { to: "/blog", label: "Blog", position: "left" },
+          {
+            href: `https://github.com/${organizationName}/${projectName}`,
+            label: "GitHub",
+            position: "right",
+          },
+        ],
+      },
+      footer: {
+        style: "dark",
+        links: [
+          {
+            title: "Docs",
+            items: [
+              {
+                label: "Documentation",
+                to: "/docs/introduction",
+              },
+            ],
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Stack Overflow",
+                href: "https://stackoverflow.com/questions/tagged/openipc",
+              },
+              {
+                label: "YouTube",
+                href: "https://youtube.com/@openipc",
+              },
+              {
+                label: "Twitter",
+                href: "https://twitter.com/openipc",
+              },
+            ],
+          },
+          {
+            title: "More",
+            items: [
+              {
+                label: "Blog",
+                to: "/blog",
+              },
+              {
+                label: "GitHub",
+                href: `https://github.com/${organizationName}/${projectName}`,
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} OpenIPC community.`,
+      },
+      prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+      },
+    }),
 };
 
 module.exports = config;
