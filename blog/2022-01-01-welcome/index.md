@@ -18,7 +18,7 @@ The blog post date can be extracted from filenames, such as:
 
 A blog post folder can be convenient to co-locate blog post images:
 
-![OpenIPC community](./img/openipc-community-640x640.jpg)
+![OpenIPC community](/img/openipc-community-640x640.jpg)
 
 The blog supports tags as well!
 

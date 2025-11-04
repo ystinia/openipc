@@ -49,9 +49,9 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
         },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
+        // theme: {
+        //  customCss: require.resolve("./src/css/custom.css"),
+        // },
       }),
     ],
   ],
@@ -60,7 +60,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "OpenIPC",
+        // Leave it empty
+        title: "",
         logo: {
           alt: "OpenIPC Logo",
           src: "img/logo.svg",
