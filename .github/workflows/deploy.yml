@@ -1,0 +1,103 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js ⚙️
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup pnpm 🔧
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.0.0
+
+      - name: Determine pnpm store path
+        id: pnpm-store
+        run: echo "PNPM_STORE_PATH=$(pnpm store path)" >> $GITHUB_ENV
+
+      - name: Restore pnpm store cache ♻️
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.PNPM_STORE_PATH }}
+          key: pnpm-store-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            pnpm-store-${{ runner.os }}-
+
+      - name: Preload dependencies into store
+        run: pnpm fetch
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Cache converted images
+        uses: actions/cache@v4
+        with:
+          path: |
+            static/img
+            .image-cache
+          key: images-${{ runner.os }}-${{ hashFiles('static/img/**/*.png', 'static/img/**/*.jpg', 'static/img/**/*.jpeg') }}
+          restore-keys: |
+            images-${{ runner.os }}-
+            images-
+
+      - name: Build website
+        run: pnpm build
+
+      - name: Create offline archive
+        run: |
+          mkdir -p artifacts
+          cd build
+          zip -r ../artifacts/openhd-website-offline.zip .
+
+      - name: Setup Pages 📄
+        uses: actions/configure-pages@v4
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docusaurus-build
+          path: build
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload offline archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: docusaurus-offline-zip
+          path: artifacts/openhd-website-offline.zip
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
