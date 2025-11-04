@@ -18,17 +18,17 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout️
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js ⚙️
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Setup pnpm 🔧
+      - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9.0.0
@@ -74,7 +74,7 @@ jobs:
           cd build
           zip -r ../artifacts/openhd-website-offline.zip .
 
-      - name: Setup Pages 📄
+      - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload build artifact
