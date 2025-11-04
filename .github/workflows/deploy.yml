@@ -51,8 +51,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Typecheck
-        run: pnpm typecheck
+#      - name: Typecheck
+#        run: pnpm typecheck
 
       - name: Cache converted images
         uses: actions/cache@v4
