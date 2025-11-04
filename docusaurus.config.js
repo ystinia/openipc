@@ -132,21 +132,21 @@ const config = {
       },
     }),
 
-      themes: [
-        // ... Setup you theme
-        [
-          require.resolve("@easyops-cn/docusaurus-search-local"),
-          /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-          ({
-            // Options. You can use `hashed`
-            hashed: true,
-            language: ["en"],
-            indexBlog: false,
-            indexPages: true,
-            highlightSearchTermsOnTargetPage: true,
-          }),
-        ],
-      ],
+//      themes: [
+//        // ... Setup you theme
+//        [
+//          require.resolve("@easyops-cn/docusaurus-search-local"),
+//          /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+//          ({
+//            // Options. You can use `hashed`
+//            hashed: true,
+//            language: ["en"],
+//            indexBlog: false,
+//            indexPages: true,
+//            highlightSearchTermsOnTargetPage: true,
+//          }),
+//        ],
+//      ],
 
 
 };
