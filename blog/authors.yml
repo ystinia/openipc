@@ -1,12 +1,18 @@
 
+flyrouter:
+  name: Igor
+  title: OpenIPC founder and coordinator
+  url: https://github.com/flyrouter
+  image_url: https://github.com/flyrouter.png
+
 ystinia:
-  name: Ystinia Zalatova
-  title: OpenIPC maintainer
+  name: Ystinia
+  title: OpenIPC representative
   url: https://github.com/ystinia
   image_url: https://github.com/ystinia.png
 
 vixand:
   name: Vixand
-  title: OpenIPC maintainer
+  title: OpenIPC integrator
   url: https://github.com/vixand
   image_url: https://github.com/vixand.png
