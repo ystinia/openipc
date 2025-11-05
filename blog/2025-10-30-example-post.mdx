@@ -5,21 +5,56 @@ authors: ystinia
 tags: [hello, example, openipc]
 ---
 
-## Some examples
+## Examples
 
-### Some tricks
+### Notes
 
-:::danger Take care
+Messages begin with three colons `:::` + an identifier and end with three colons `:::`, each on its own line.
 
-This action is dangerous
-
+:::note
+Regular note, identifier **note**
 :::
 
-:::tip My tip
-
-Use this awesome feature option
-
+:::tip
+Hint-type note, identifier **tip**
 :::
+
+:::info
+Info to think about, identifier **info**
+:::
+
+:::warning
+Requires attention, identifier **warning**
+:::
+
+:::danger
+Error, all lost, identifier **danger**
+:::
+
+### Quotes
+
+Quotes begin with the '>' character, which begins a line.
+
+> This is a quote (line 1)
+> Continue quoting (line 2)
+
+### Details
+
+The <details> tag is used for the block, with a <summary> tag inside for the block title.
+Collapsible text supports MarkDown markup.
+
+<details>
+<summary>**Collapsible text title**</summary>
+
+For the title to work, the collapsible text itself must be separated from the title by a space, or
+the text following the title is a list.
+Draw a line and add a message after it.
+***
+:::note Warning
+This is an **added** message.
+:::
+</details>
+
 
 ### MDX support
 
