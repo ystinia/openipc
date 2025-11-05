@@ -35,7 +35,7 @@ function Home() {
                 'button button--primary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/introduction')}>
+              to={useBaseUrl('docs/about')}>
               Get Started&nbsp;&nbsp;→
             </Link>
           </div>
@@ -48,8 +48,7 @@ function Home() {
               <div className="col col--8 col--offset-2">
                 <div className="margin-vert--lg text--center">
                   <h2 className={styles.sectionDarkTitle}>
-                    Site is not yet ready for production use and is being
-                    developed alongside{' '}
+                    WTF done here{' '}
                     <a
                       className={styles.sectionDarkLink}
                       href="https://docusaurus.io"
