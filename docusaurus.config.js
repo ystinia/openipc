@@ -1,57 +1,76 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+import {themes as prismThemes} from 'prism-react-renderer';
 
-const organizationName = "ystinia";
-const projectName = "openipc";
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "OpenIPC",
-  tagline: "OpenIPC is an open source operating system from the open community targeting for IP cameras with ARM and MIPS processors.",
-  url: `https://${organizationName}.github.io`,
-  baseUrl: `/${projectName}/`,
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "throw",
-  favicon: "img/favicon.ico",
-  // GitHub Pages adds a trailing slash by default that I don't want
-  trailingSlash: false,
+  title: 'OpenIPC',
+  tagline: 'OpenIPC is an open source operating system from the open community targeting for IP cameras with ARM and MIPS processors.',
+  favicon: 'img/favicon.ico',
+
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  },
+
+  // Set the production url of your site here
+  url: 'https://your-docusaurus-site.example.com',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/openipc/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName, // Usually your GitHub org/user name.
-  projectName, // Usually your repo name.
+  organizationName: 'ystinia', // Usually your GitHub org/user name.
+  projectName: 'openipc', // Usually your repo name.
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
     [
-      "classic",
+      'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: `https://github.com/${organizationName}/${projectName}/tree/main/`,
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
         },
-        // theme: {
-        //  customCss: require.resolve("./src/css/custom.css"),
-        // },
+        theme: {
+          customCss: './src/css/custom.css',
+        },
       }),
     ],
   ],
@@ -59,67 +78,72 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Replace with your project's social card
+      image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        // Leave it empty
-        title: "",
+        title: '',
         logo: {
-          alt: "OpenIPC Logo",
-          src: "img/logo.svg",
+          alt: 'OpenIPC Logo',
+          src: 'img/logo.svg',
         },
         items: [
           {
-            type: "doc",
-            docId: "introduction",
-            position: "left",
-            label: "Documentation",
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Tutorial',
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: `https://github.com/${organizationName}/${projectName}`,
-            label: "GitHub",
-            position: "right",
+            href: 'https://github.com/openipc',
+            label: 'GitHub',
+            position: 'right',
           },
         ],
       },
       footer: {
-        style: "dark",
+        style: 'dark',
         links: [
           {
-            title: "Docs",
+            title: 'Docs',
             items: [
               {
-                label: "Documentation",
-                to: "/docs/introduction",
+                label: 'Tutorial',
+                to: '/docs/intro',
               },
             ],
           },
           {
-            title: "Community",
+            title: 'Community',
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/openipc",
+                label: 'Open Collective',
+                href: 'https://opencollective.com/openipc',
               },
               {
-                label: "YouTube",
-                href: "https://youtube.com/@openipc",
+                label: 'YouTube',
+                href: 'https://youtube.com/@openipc',
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/openipc",
+                label: 'X',
+                href: 'https://x.com/openipc',
+              },
+              {
+                label: 'Printables',
+                href: 'https://www.printables.com/search/models?q=tag:openipc',
               },
             ],
           },
           {
-            title: "More",
+            title: 'More',
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: 'Blog',
+                to: '/blog',
               },
               {
-                label: "GitHub",
-                href: `https://github.com/${organizationName}/${projectName}`,
+                label: 'GitHub',
+                href: 'https://github.com/openipc',
               },
             ],
           },
@@ -127,28 +151,10 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} OpenIPC community.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
     }),
-
-//      themes: [
-//        // ... Setup you theme
-//        [
-//          require.resolve("@easyops-cn/docusaurus-search-local"),
-//          /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-//          ({
-//            // Options. You can use `hashed`
-//            hashed: true,
-//            language: ["en"],
-//            indexBlog: false,
-//            indexPages: true,
-//            highlightSearchTermsOnTargetPage: true,
-//          }),
-//        ],
-//      ],
-
-
 };
 
-module.exports = config;
+export default config;

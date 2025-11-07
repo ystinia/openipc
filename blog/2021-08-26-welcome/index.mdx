@@ -1,9 +1,44 @@
 ---
-slug: example-post
-title: Example Post
-authors: ystinia
-tags: [hello, example, openipc]
+slug: mdx-blog-post
+title: MDX Blog Post
+authors: [ystinia, vixand]
+tags: [docusaurus]
 ---
+
+
+Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+
+Here are a few tips you might find useful.
+
+<!-- truncate -->
+
+Simply add Markdown files (or folders) to the `blog` directory.
+
+Regular blog authors can be added to `authors.yml`.
+
+The blog post date can be extracted from filenames, such as:
+
+- `2019-05-30-welcome.md`
+- `2019-05-30-welcome/index.md`
+
+Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+
+:::tip
+
+Use the power of React to create interactive blog posts.
+
+:::
+
+{/* truncate */}
+
+For example, use JSX to create an interactive button:
+
+```js
+<button onClick={() => alert('button clicked!')}>Click me!</button>
+```
+
+<button onClick={() => alert('button clicked!')}>Click me!</button>
+
 
 ## Examples
 
@@ -85,5 +120,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
-
 

@@ -4,15 +4,32 @@ flyrouter:
   title: OpenIPC founder and coordinator
   url: https://github.com/flyrouter
   image_url: https://github.com/flyrouter.png
+  page: true
+  socials:
+    youtube: openipc
 
 ystinia:
   name: Ystinia
   title: OpenIPC representative
   url: https://github.com/ystinia
   image_url: https://github.com/ystinia.png
+  page:
+    # customize the url of the author page at /blog/authors/<permalink>
+    permalink: '/all-sebastien-lorber-articles'
+  socials:
+    x: openipc
+    linkedin: openipc
+    github: ystinia
+    newsletter: https://mediantrading.net
 
 vixand:
   name: Vixand
   title: OpenIPC integrator
   url: https://github.com/vixand
   image_url: https://github.com/vixand.png
+  page: true
+  socials:
+    x: openipc
+    linkedin: openipc
+    github: vixand
+    newsletter: https://mediantrading.net

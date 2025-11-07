@@ -1,8 +1,6 @@
 /**
- * Copyright (c) 2025 OpenIPC community
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
  */
 
 .heroBanner {
@@ -12,11 +10,7 @@
   overflow: hidden;
 }
 
-.heroBannerLogo {
-  max-width: 128px;
-}
-
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
   }
@@ -26,21 +20,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.sectionAlt {
-  background-color: var(--ifm-color-emphasis-alpha-05);
-}
-
-.sectionDark {
-  background-color: var(--ifm-color-primary);
-}
-
-.sectionDarkTitle {
-  color: var(--ifm-color-white);
-}
-
-.sectionDark a,
-.sectionDark a:hover {
-  color: var(--ifm-color-gray-1000);
 }

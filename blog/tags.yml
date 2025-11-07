@@ -1,0 +1,30 @@
+builder:
+  label: builder
+  permalink: /builder
+  description: Builder tag description
+
+community:
+  label: community
+  permalink: /community
+  description: Community tag description
+
+coupler:
+  label: coupler
+  permalink: /coupler
+  description: Coupler tag description
+
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Docusaurus tag description
+
+majestic:
+  label: majestic
+  permalink: /majestic
+  description: Majestic tag description
+
+openipc:
+  label: openipc
+  permalink: /openipc
+  description: OpenIPC tag description
+
