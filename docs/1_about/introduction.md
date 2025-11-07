@@ -1,4 +1,7 @@
 ---
+title: Introduction
+sidebar_label: Introduction
+slug: /introduction
 sidebar_position: 1
 ---
 

@@ -1,5 +1,8 @@
 ---
-sidebar_position: 2
+title: Contributing
+sidebar_label: Contributing
+slug: /contributing
+sidebar_position: 3
 ---
 
 # Contributing

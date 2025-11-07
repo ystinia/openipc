@@ -1,5 +1,8 @@
 ---
-sidebar_position: 1
+title: Team
+sidebar_label: Team
+slug: /team
+sidebar_position: 2
 ---
 
 # Team

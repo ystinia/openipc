@@ -155,6 +155,26 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+
+
+// External 2025.11.07
+//
+//      themes: [
+//        // ... Setup you theme
+//        [
+//          require.resolve("@easyops-cn/docusaurus-search-local"),
+//          /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+//          ({
+//            // Options. You can use `hashed`
+//            hashed: true,
+//            language: ["en"],
+//            indexBlog: false,
+//            indexPages: true,
+//            highlightSearchTermsOnTargetPage: true,
+//          }),
+//        ],
+//      ],
+
 };
 
 export default config;
