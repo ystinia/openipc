@@ -20,7 +20,7 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://openipc.info',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/openipc/',
@@ -109,7 +109,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/docs/introduction',
               },
             ],
           },
@@ -156,7 +156,6 @@ const config = {
       },
     }),
 
-
 // External 2025.11.07
 //
 //      themes: [
@@ -174,6 +173,8 @@ const config = {
 //          }),
 //        ],
 //      ],
+
+
 
 };
 
