@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'OpenIPC',
-  tagline: 'OpenIPC is an open source operating system from the open community targeting for IP cameras with ARM and MIPS processors.',
+  tagline: 'is an open source operating system from the open community targeting for IP cameras with ARM and MIPS processors.',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future

@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/introduction">
-            OpenIPC Overview - 5min ⏱
+            Overview - 5min ⏱
           </Link>
         </div>
       </div>
